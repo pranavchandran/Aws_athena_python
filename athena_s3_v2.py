@@ -11,6 +11,11 @@ import os
 aws_access_key_id = os.getenv('AWS_ACCESS_KEY_ID')
 aws_secret_access_key = os.getenv('AWS_SECRET_ACCESS_KEY')
 
+# Check if AWS credentials are not None
+if aws_access_key_id is None or aws_secret_access_key is None:
+    print("AWS credentials not found")
+    exit(1)
+
 # Initialize a session using your new credentials
 session = boto3.Session(
     aws_access_key_id=aws_access_key_id,
