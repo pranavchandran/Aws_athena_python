@@ -13,6 +13,7 @@ session = boto3.Session(
     region_name='us-east-1'  # e.g., 'us-east-1'
 )
 
+
 # Use the session to create an Athena client
 client = session.client('athena')
 
