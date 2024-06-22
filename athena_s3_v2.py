@@ -5,6 +5,9 @@ import os
 aws_access_key_id = os.getenv('AWS_ACCESS_KEY_ID')
 aws_secret_access_key = os.getenv('AWS_SECRET_ACCESS_KEY')
 
+aws_access_key_id = aws_access_key_id.split(':')[1]
+aws_secret_access_key = aws_secret_access_key.split(':')[1]
+
 # Check if AWS credentials are not None
 if aws_access_key_id is None or aws_secret_access_key is None:
     print("AWS credentials not found")
