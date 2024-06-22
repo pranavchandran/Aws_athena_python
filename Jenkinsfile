@@ -2,8 +2,8 @@ pipeline {
     agent any
 
     environment {
-        AWS_ACCESS_KEY_ID = credentials('aws-access-key-id') // Ensure 'aws-access-key-id' is the correct ID in Jenkins credentials
-        AWS_SECRET_ACCESS_KEY = credentials('aws-secret-access-key') // Ensure 'aws-secret-access-key' is the correct ID in Jenkins credentials
+        AWS_ACCESS_KEY_ID = credentials('aws-access-key-id')
+        AWS_SECRET_ACCESS_KEY = credentials('aws-secret-access-key')
     }
 
     stages {
@@ -20,6 +20,8 @@ pipeline {
                     bat '''
                     set AWS_ACCESS_KEY_ID=%AWS_ACCESS_KEY_ID%
                     set AWS_SECRET_ACCESS_KEY=%AWS_SECRET_ACCESS_KEY%
+                    echo AWS_ACCESS_KEY_ID: %AWS_ACCESS_KEY_ID%
+                    echo AWS_SECRET_ACCESS_KEY: %AWS_SECRET_ACCESS_KEY%
                     python athena_s3_v2.py
                     '''
                 }
