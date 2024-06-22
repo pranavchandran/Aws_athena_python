@@ -10,13 +10,11 @@ import os
 # Get AWS credentials from environment variables
 aws_access_key_id = os.getenv('AWS_ACCESS_KEY_ID')
 aws_secret_access_key = os.getenv('AWS_SECRET_ACCESS_KEY')
-print(f"{aws_access_key_id=}")
-print(f"{aws_secret_access_key}")
 
 # Initialize a session using your new credentials
 session = boto3.Session(
-    aws_access_key_id=os.getenv(aws_access_key_id),
-    aws_secret_access_key=os.getenv(aws_secret_access_key),
+    aws_access_key_id=aws_access_key_id,
+    aws_secret_access_key=aws_secret_access_key,
     region_name='us-east-1'  # e.g., 'us-east-1'
 )
 print('Passed 1')
