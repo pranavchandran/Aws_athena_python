@@ -11,6 +11,7 @@ pipeline {
             steps {
                 script {
                     bat 'python -m pip install boto3'
+                    bat 'pip install awscli'  // Ensure AWS CLI is installed
                 }
             }
         }
@@ -18,8 +19,8 @@ pipeline {
             steps {
                 script {
                     bat '''
-                    echo AWS_ACCESS_KEY_ID: %AWS_ACCESS_KEY_ID:~0,4%****
-                    echo AWS_SECRET_ACCESS_KEY: %AWS_SECRET_ACCESS_KEY:~0,4%****
+                    set AWS_ACCESS_KEY_ID=%AWS_ACCESS_KEY_ID%
+                    set AWS_SECRET_ACCESS_KEY=%AWS_SECRET_ACCESS_KEY%
                     aws sts get-caller-identity
                     '''
                 }
