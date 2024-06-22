@@ -12,7 +12,7 @@ session = boto3.Session(
     aws_secret_access_key=os.getenv('AWS_SECRET_ACCESS_KEY'),
     region_name='us-east-1'  # e.g., 'us-east-1'
 )
-
+print('Passed 1')
 
 # Use the session to create an Athena client
 client = session.client('athena')
