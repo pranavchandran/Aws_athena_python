@@ -15,17 +15,6 @@ pipeline {
                 }
             }
         }
-        stage('Verify Credentials') {
-            steps {
-                script {
-                    bat '''
-                    set AWS_ACCESS_KEY_ID=%AWS_ACCESS_KEY_ID%
-                    set AWS_SECRET_ACCESS_KEY=%AWS_SECRET_ACCESS_KEY%
-                    aws sts get-caller-identity
-                    '''
-                }
-            }
-        }
         stage('Run Athena Query') {
             steps {
                 script {
