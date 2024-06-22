@@ -10,6 +10,9 @@ pipeline {
         stage('Run Local Code') {
             steps {
                 script {
+                    // Print environment variables
+                    bat 'echo $AWS_ACCESS_KEY_ID'
+                    bat 'echo $AWS_SECRET_ACCESS_KEY'
                     // Ensure you have Python and necessary libraries installed
                     bat 'python -m pip install boto3'
                     bat 'python athena_s3_v2.py'
