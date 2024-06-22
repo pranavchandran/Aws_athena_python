@@ -12,7 +12,7 @@ pipeline {
                 script {
                     // Ensure you have Python and necessary libraries installed
                     sh 'python3 -m pip install boto3'
-                    sh 'python3 athena_connection_s3.py'
+                    sh 'python3 athena_s3_v2.py'
                 }
             }
         }
