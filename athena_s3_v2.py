@@ -4,11 +4,12 @@
 # __FileName__ = athena_connection_s3.py
 
 import boto3
+import os
 
 # Initialize a session using your new credentials
 session = boto3.Session(
-    aws_access_key_id='AKIAYS2NUES376BGJSYD',
-    aws_secret_access_key='YU4te+epg8JhAxqd7ANOqyk1ol0qGybXKdhK7g+p',
+    aws_access_key_id=os.getenv('AWS_ACCESS_KEY_ID'),
+    aws_secret_access_key=os.getenv('AWS_SECRET_ACCESS_KEY'),
     region_name='us-east-1'  # e.g., 'us-east-1'
 )
 
