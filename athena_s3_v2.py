@@ -1,11 +1,5 @@
-# __Author__ = "Pranav Chandran"
-# __Date__ = 19-06-2024
-# __Time__ = 13:14
-# __FileName__ = athena_connection_s3.py
-
 import boto3
 import os
-
 
 # Get AWS credentials from environment variables
 aws_access_key_id = os.getenv('AWS_ACCESS_KEY_ID')
@@ -50,4 +44,3 @@ if response:
     print("Query executed successfully. Query execution ID:", response['QueryExecutionId'])
 else:
     print("Query execution failed.")
-
