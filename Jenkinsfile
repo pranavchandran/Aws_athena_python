@@ -11,8 +11,8 @@ pipeline {
             steps {
                 script {
                     // Ensure you have Python and necessary libraries installed
-                    sh 'python3 -m pip install boto3'
-                    sh 'python3 athena_s3_v2.py'
+                    sh 'python -m pip install boto3'
+                    sh 'python athena_s3_v2.py'
                 }
             }
         }
