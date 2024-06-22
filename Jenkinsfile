@@ -17,7 +17,7 @@ pipeline {
                     }
                     // Ensure you have Python and necessary libraries installed
                     bat 'python -m pip install boto3'
-                    bat 'python athena_s3_v2.py'
+                    bat 'set AWS_ACCESS_KEY_ID=%AWS_ACCESS_KEY_ID% && set AWS_SECRET_ACCESS_KEY=%AWS_SECRET_ACCESS_KEY% && python athena_s3_v2.py'
                 }
             }
         }
